@@ -6,8 +6,10 @@ git clone git@git.foxsoft.co.uk:foxsoft/neovim.git ~/.config/nvim
 
 Open ~/.config/nvim/lua/awp/packer.lua in nvim
 
-do :o
+do :so
+
 (ignore errors)
+
 do :PackerSync
 
 do :PackerSync
