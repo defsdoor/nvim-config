@@ -44,27 +44,27 @@ Will Document keymaps here - a full list can be seen by typing :Telescope keymap
 
 #### Rails
 
-<SPACE>rc - File selector for rails controllers
-<SPACE>rv - File selector for rails views
-<SPACE>rm - File selector for rails models
-<SPACE>rj - File selector for rails javascripts
-<SPACE>rs - File selector for rails stylesheets
-<SPACE>rh - File selector for rails helpers
+- \<SPACE>rc - File selector for rails controllers
+- \<SPACE>rv - File selector for rails views
+- \<SPACE>rm - File selector for rails models
+- \<SPACE>rj - File selector for rails javascripts
+- \<SPACE>rs - File selector for rails stylesheets
+- \<SPACE>rh - File selector for rails helpers
 
 ### Git
-<SPACE>gs - Git Status
+- \<SPACE>gs - Git Status
 
 ### Harpoon
 Harpoon lets you "harpoon" files and switch between them quickly
 
-<SPACE>-ha - Add (harppon) a file
-<SPACE>-ho - Open harpooned file list
-<SPACE>-h1 - Open harpooned file No.1
-<SPACE>-h2 - Open harpooned file No.2
-<SPACE>-h3 - Open harpooned file No.3
-<SPACE>-h4 - Open harpooned file No.4
-<SPACE>-h5 - Open harpooned file No.5
-<SPACE>-h6 - Open harpooned file No.6
-<SPACE>-h7 - Open harpooned file No.7
-<SPACE>-h8 - Open harpooned file No.8
-<SPACE>-h9 - Open harpooned file No.9
+- \<SPACE>-ha - Add (harppon) a file
+- \<SPACE>-ho - Open harpooned file list
+- \<SPACE>-h1 - Open harpooned file No.1
+- \<SPACE>-h2 - Open harpooned file No.2
+- \<SPACE>-h3 - Open harpooned file No.3
+- \<SPACE>-h4 - Open harpooned file No.4
+- \<SPACE>-h5 - Open harpooned file No.5
+- \<SPACE>-h6 - Open harpooned file No.6
+- \<SPACE>-h7 - Open harpooned file No.7
+- \<SPACE>-h8 - Open harpooned file No.8
+- \<SPACE>-h9 - Open harpooned file No.9
