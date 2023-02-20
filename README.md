@@ -5,17 +5,27 @@
 Prerequisite: install [ripgrep](https://github.com/BurntSushi/ripgrep).
 
 
-git clone git@git.foxsoft.co.uk:foxsoft/neovim.git ~/.config/nvim
+``` git clone git@git.foxsoft.co.uk:foxsoft/neovim.git ~/.config/nvim```
+
+Install packer (package management for nvim)
+
+``` git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim ```
 
 Open ~/.config/nvim/lua/awp/packer.lua in nvim
 
-do :so
+do 
+
+```:so```
 
 (ignore errors)
 
-do :PackerSync
+do
 
-do :PackerSync
+```:PackerSync```
+
+do 
+
+```:PackerSync```
 
 quit nvim
 
