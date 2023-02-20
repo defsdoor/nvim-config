@@ -44,15 +44,15 @@ Will Document keymaps here - a full list can be seen by typing :Telescope keymap
 
 #### Rails
 
-- \<SPACE>rc - File selector for rails controllers
-- \<SPACE>rv - File selector for rails views
-- \<SPACE>rm - File selector for rails models
-- \<SPACE>rj - File selector for rails javascripts
-- \<SPACE>rs - File selector for rails stylesheets
-- \<SPACE>rh - File selector for rails helpers
+- \<SPACE>-rc - File selector for rails controllers
+- \<SPACE>-rv - File selector for rails views
+- \<SPACE>-rm - File selector for rails models
+- \<SPACE>-rj - File selector for rails javascripts
+- \<SPACE>-rs - File selector for rails stylesheets
+- \<SPACE>-rh - File selector for rails helpers
 
 ### Git
-- \<SPACE>gs - Git Status
+- \<SPACE>-gs - Git Status
 
 ### Harpoon
 Harpoon lets you "harpoon" files and switch between them quickly
