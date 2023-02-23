@@ -70,6 +70,7 @@ return require('packer').startup(function(use)
   use("tpope/vim-rails")
   use("tpope/vim-endwise")
   use("romainl/vim-cool")
+  use("vimwiki/vimwiki")
 
 end)
 

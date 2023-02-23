@@ -74,6 +74,12 @@ vim.keymap.set("n", "<leader>rh",
                "<cmd>lua require('telescope.builtin')[\"find_files\"]({search_dirs = { \"app/helpers\" } })<CR>",
                { desc = "Open Rails Stylesheets" } )
 
+vim.keymap.set("n", "<leader>oo",
+               "<cmd>lua require('telescope.builtin')[\"oldfiles\"]({search_dirs = { \".\" } })<CR>",
+               { desc = "Recent Files" } )
+vim.keymap.set("n", "<leader>ob",
+               "<cmd>lua require('telescope.builtin')[\"buffers\"]({search_dirs = { \".\" } })<CR>",
+               { desc = "Open Buffers" } )
 
 -- My Harpoon maps - under trial
 
