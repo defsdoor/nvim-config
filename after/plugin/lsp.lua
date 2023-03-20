@@ -41,7 +41,7 @@ lsp.set_preferences({
 --        error = 'E',
 --        warn = 'W',
 --        hint = 'H',
---        info = 'I'
+        info = 'I'
 --    }
 })
 
