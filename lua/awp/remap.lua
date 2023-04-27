@@ -1,4 +1,5 @@
 -- TelescopeMapArgs = TelescopeMapArgs or {}
+vim=vim
 
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
@@ -39,7 +40,7 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/awp/packer.lua<CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 -- vim.keymap.set("n", "<leader><leader>", function()
@@ -55,31 +56,38 @@ vim.keymap.set("n", "<leader><leader>", "<cmd>b#<CR>");
 -- map_ctrlo_tele("rv", "find_files", { search_dirs = { "app/views" } })
 -- map_ctrlo_tele("rj", "find_files", { search_dirs = { "app/javascript" } })
 
-vim.keymap.set("n", "<leader>rc",
-               "<cmd>lua require('telescope.builtin')[\"find_files\"]({search_dirs = { \"app/controllers\" } })<CR>",
-               { desc = "Open Rails Controllers"} )
-vim.keymap.set("n", "<leader>rm",
-               "<cmd>lua require('telescope.builtin')[\"find_files\"]({search_dirs = { \"app/models\" } })<CR>",
-               { desc = "Open Rails Models" } )
-vim.keymap.set("n", "<leader>rv",
-               "<cmd>lua require('telescope.builtin')[\"find_files\"]({search_dirs = { \"app/views\" } })<CR>",
-               { desc = "Open Rails Views" } )
-vim.keymap.set("n", "<leader>rj",
-               "<cmd>lua require('telescope.builtin')[\"find_files\"]({search_dirs = { \"app/javascript\" } })<CR>",
-               { desc = "Open Rails Javascripts" } )
-vim.keymap.set("n", "<leader>rs",
-               "<cmd>lua require('telescope.builtin')[\"find_files\"]({search_dirs = { \"app/assets/stylesheets\" } })<CR>",
-               { desc = "Open Rails Stylesheets" } )
-vim.keymap.set("n", "<leader>rh",
-               "<cmd>lua require('telescope.builtin')[\"find_files\"]({search_dirs = { \"app/helpers\" } })<CR>",
-               { desc = "Open Rails Stylesheets" } )
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>rc',
+  function() builtin.find_files({ search_dirs = { "app/controllers" } }) end,
+  { desc = "Open Rails Controllers" } )
+vim.keymap.set('n', '<leader>rm',
+  function() builtin.find_files({ search_dirs = { "app/models" } }) end,
+  { desc = "Open Rails Models" } )
+vim.keymap.set('n', '<leader>rv',
+  function() builtin.find_files({ search_dirs = { "app/views" } }) end,
+  { desc = "Open Rails Views" } )
+vim.keymap.set('n', '<leader>rj',
+  function() builtin.find_files({ search_dirs = { "app/javascript", "app/assets/javascripts" } }) end,
+  { desc = "Open Rails Javascripts" } )
+vim.keymap.set('n', '<leader>rs',
+  function() builtin.find_files({ search_dirs = { "app/assets/stylesheets" } }) end,
+  { desc = "Open Rails Stylesheets" } )
+vim.keymap.set('n', '<leader>rh',
+  function() builtin.find_files({ search_dirs = { "app/helpers" } }) end,
+  { desc = "Open Rails Helpers" } )
+vim.keymap.set('n', '<leader>oo',
+  function() builtin.oldfiles({ search_dirs = { "." } }) end,
+  { desc = "Open Old Files" } )
+vim.keymap.set('n', '<leader>ob',
+  function() builtin.buffers({ search_dirs = { "." } }) end,
+  { desc = "Open Old Files" } )
+vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = "File Files" } )
+vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = "Git Files" } )
+vim.keymap.set('n', '<leader>ps',
+  function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end,
+  { desc = "Grep Files" })
+vim.keymap.set('n', '<leader>vh', builtin.help_tags, { desc = "Help Tags" } )
 
-vim.keymap.set("n", "<leader>oo",
-               "<cmd>lua require('telescope.builtin')[\"oldfiles\"]({search_dirs = { \".\" } })<CR>",
-               { desc = "Recent Files" } )
-vim.keymap.set("n", "<leader>ob",
-               "<cmd>lua require('telescope.builtin')[\"buffers\"]({search_dirs = { \".\" } })<CR>",
-               { desc = "Open Buffers" } )
 
 -- My Harpoon maps - under trial
 
