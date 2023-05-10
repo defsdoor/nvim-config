@@ -78,6 +78,9 @@ vim.keymap.set('n', '<leader>rh',
 vim.keymap.set('n', '<leader>oo',
   function() builtin.oldfiles({ search_dirs = { "." } }) end,
   { desc = "Open Old Files" } )
+vim.keymap.set('n', '<leader>rz',
+  function() builtin.resume() end,
+  { desc = "Resume previous find" } )
 vim.keymap.set('n', '<leader>ob',
   function() builtin.buffers({ search_dirs = { "." } }) end,
   { desc = "Open Old Files" } )
