@@ -1,8 +1,8 @@
-require('rose-pine').setup({
-    disable_background = true,
-    disable_italics = true
-
-})
+-- require('rose-pine').setup({
+--     disable_background = true,
+--     disable_italics = true
+--
+-- })
 
 function ColorMyPencils(color)
 	color = color or "gruvbox"

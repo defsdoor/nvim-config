@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
     'morhetz/gruvbox',
 	  as = 'gruvbox',
 	  config = function()
-		  vim.cmd('colorscheme gruvboxe')
+		  vim.cmd('colorscheme gruvbox')
 	  end
   })
 

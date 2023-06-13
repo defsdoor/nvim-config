@@ -16,7 +16,7 @@ vim.opt.cursorline = true
 vim.opt.fileformat = "unix"
 vim.opt.hlsearch = true
 
-vim.opt.wrap = false
+vim.opt.wrap = true
 vim.opt.tildeop = true
 
 vim.opt.swapfile = false

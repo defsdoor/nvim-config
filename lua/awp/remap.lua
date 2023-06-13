@@ -91,6 +91,9 @@ vim.keymap.set('n', '<leader>ps',
   { desc = "Grep Files" })
 vim.keymap.set('n', '<leader>vh', builtin.help_tags, { desc = "Help Tags" } )
 
+vim.keymap.set('n', '<leader>rr',
+  function() builtin.find_files( { search_dirs = { vim.fn.expand("%:h") } } ) end,
+  { desc = "Browse current file directory" } )
 
 -- My Harpoon maps - under trial
 
