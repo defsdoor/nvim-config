@@ -1,5 +1,5 @@
 -- TelescopeMapArgs = TelescopeMapArgs or {}
-vim=vim
+vim = vim
 
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
@@ -18,10 +18,10 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -59,41 +59,46 @@ vim.keymap.set("n", "<leader><leader>", "<cmd>b#<CR>");
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>rc',
   function() builtin.find_files({ search_dirs = { "app/controllers" } }) end,
-  { desc = "Open Rails Controllers" } )
+  { desc = "Open Rails Controllers" })
 vim.keymap.set('n', '<leader>rm',
   function() builtin.find_files({ search_dirs = { "app/models" } }) end,
-  { desc = "Open Rails Models" } )
+  { desc = "Open Rails Models" })
 vim.keymap.set('n', '<leader>rv',
   function() builtin.find_files({ search_dirs = { "app/views" } }) end,
-  { desc = "Open Rails Views" } )
+  { desc = "Open Rails Views" })
 vim.keymap.set('n', '<leader>rj',
   function() builtin.find_files({ search_dirs = { "app/javascript", "app/assets/javascripts" } }) end,
-  { desc = "Open Rails Javascripts" } )
+  { desc = "Open Rails Javascripts" })
 vim.keymap.set('n', '<leader>rs',
   function() builtin.find_files({ search_dirs = { "app/assets/stylesheets" } }) end,
-  { desc = "Open Rails Stylesheets" } )
+  { desc = "Open Rails Stylesheets" })
 vim.keymap.set('n', '<leader>rh',
   function() builtin.find_files({ search_dirs = { "app/helpers" } }) end,
-  { desc = "Open Rails Helpers" } )
+  { desc = "Open Rails Helpers" })
 vim.keymap.set('n', '<leader>oo',
   function() builtin.oldfiles({ search_dirs = { "." } }) end,
-  { desc = "Open Old Files" } )
+  { desc = "Open Old Files" })
 vim.keymap.set('n', '<leader>rz',
   function() builtin.resume() end,
-  { desc = "Resume previous find" } )
+  { desc = "Resume previous find" })
 vim.keymap.set('n', '<leader>ob',
   function() builtin.buffers({ search_dirs = { "." } }) end,
-  { desc = "Open Old Files" } )
-vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = "File Files" } )
-vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = "Git Files" } )
+  { desc = "Open Old Files" })
+vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = "File Files" })
+vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = "Git Files" })
 vim.keymap.set('n', '<leader>ps',
   function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end,
   { desc = "Grep Files" })
-vim.keymap.set('n', '<leader>vh', builtin.help_tags, { desc = "Help Tags" } )
+vim.keymap.set('n', '<leadert>vh', builtin.help_tags, { desc = "Help Tags" })
 
 vim.keymap.set('n', '<leader>rr',
-  function() builtin.find_files( { search_dirs = { vim.fn.expand("%:h") } } ) end,
-  { desc = "Browse current file directory" } )
+  function()
+    cwd = vim.fn.getcwd()
+    fp = vim.fn.expand("%:h")
+    p = fp:gsub("^" .. cwd, "")
+    builtin.find_files({ search_dirs = { p } })
+  end,
+  { desc = "Browse current file directory" })
 
 -- My Harpoon maps - under trial
 
