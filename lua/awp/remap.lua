@@ -76,7 +76,7 @@ vim.keymap.set('n', '<leader>rh',
   function() builtin.find_files({ search_dirs = { "app/helpers" } }) end,
   { desc = "Open Rails Helpers" })
 vim.keymap.set('n', '<leader>oo',
-  function() builtin.oldfiles({ search_dirs = { "." } }) end,
+  function() builtin.oldfiles({ cwd_only = true }) end,
   { desc = "Open Old Files" })
 vim.keymap.set('n', '<leader>rz',
   function() builtin.resume() end,

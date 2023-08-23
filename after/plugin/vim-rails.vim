@@ -26,3 +26,4 @@ let g:rails_projections = {
       \       "affinity": "controller"
       \      }
       \      }
+
