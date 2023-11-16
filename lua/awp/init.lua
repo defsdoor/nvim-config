@@ -102,3 +102,9 @@ require("lspconfig").ruby_ls.setup({
 require("gruvbox").setup({
   transparent_mode = true,
 })
+
+require('nvim-treesitter.configs').setup {
+    endwise = {
+        enable = true,
+    },
+}
