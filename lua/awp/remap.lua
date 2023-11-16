@@ -57,6 +57,7 @@ vim.keymap.set("n", "<leader><leader>", "<cmd>b#<CR>");
 -- map_ctrlo_tele("rj", "find_files", { search_dirs = { "app/javascript" } })
 
 local builtin = require('telescope.builtin')
+
 vim.keymap.set('n', '<leader>rc',
   function() builtin.find_files({ search_dirs = { "app/controllers" } }) end,
   { desc = "Open Rails Controllers" })
@@ -100,21 +101,4 @@ vim.keymap.set('n', '<leader>rr',
   end,
   { desc = "Browse current file directory" })
 
--- My Harpoon maps - under trial
-
-local mark = require("harpoon.mark")
-local harpoon = require("harpoon.ui")
-
-vim.keymap.set("n", "<leader>ha", mark.add_file)
-vim.keymap.set("n", "<C-e>", harpoon.toggle_quick_menu)
-vim.keymap.set("n", "<leader>ho", harpoon.toggle_quick_menu)
-
-vim.keymap.set("n", "<leader>h1", function() harpoon.nav_file(1) end)
-vim.keymap.set("n", "<leader>h2", function() harpoon.nav_file(2) end)
-vim.keymap.set("n", "<leader>h3", function() harpoon.nav_file(3) end)
-vim.keymap.set("n", "<leader>h4", function() harpoon.nav_file(4) end)
-vim.keymap.set("n", "<leader>h5", function() harpoon.nav_file(5) end)
-vim.keymap.set("n", "<leader>h6", function() harpoon.nav_file(6) end)
-vim.keymap.set("n", "<leader>h7", function() harpoon.nav_file(7) end)
-vim.keymap.set("n", "<leader>h8", function() harpoon.nav_file(8) end)
-vim.keymap.set("n", "<leader>h9", function() harpoon.nav_file(9) end)
+vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })

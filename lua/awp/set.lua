@@ -31,7 +31,7 @@ vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
+-- vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
@@ -43,3 +43,6 @@ vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 vim.go.foldlevelstart = 99
 vim.wo.foldnestmax = 3
 vim.wo.foldminlines = 1
+
+vim.opt.background = "dark"
+
