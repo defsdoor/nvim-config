@@ -1,5 +1,7 @@
 local lsp = require("lsp-zero")
 
+lsp.extend_lspconfig()
+
 lsp.preset("recommended")
 
 -- Fix Undefined global 'vim'

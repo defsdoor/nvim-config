@@ -7,15 +7,6 @@ local AWPGroup = augroup('AWP', {})
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
 
-local lsp_zero = require('lsp-zero')
-
-lsp_zero.set_sign_icons( {
-  error = '✘',
-  warn = '▲',
-  hint = '⚑',
-  info = ''
-})
-
 vim.diagnostic.config({
   virtual_text = false,
   severity_sort = true,
@@ -25,19 +16,6 @@ vim.diagnostic.config({
     source = 'always',
     header = '',
     prefix = '',
-  },
-})
-
-local cmp = require('cmp')
-require('luasnip.loaders.from_vscode').lazy_load()
-
-cmp.setup({
-  sources = {
-    {name = 'path'},
-    {name = 'nvim_lsp'},
-    {name = 'nvim_lua'},
-    {name = 'buffer', keyword_length = 3},
-    {name = 'luasnip', keyword_length = 2},
   },
 })
 
@@ -107,6 +85,9 @@ local function setup_diagnostics(client, buffer)
     end,
   })
 end
+
+local lsp_zero = require('lsp-zero')
+lsp_zero.extend_lspconfig()
 
 require("lspconfig").ruby_ls.setup({
   on_attach = function(client, buffer)
