@@ -17,6 +17,7 @@ lsp.preset("recommended")
 
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
+local lspkind = require('lspkind')
 
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
@@ -33,23 +34,37 @@ cmp.setup({
     {name = 'luasnip', keyword_length = 2},
   },
   window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
+--    completion = cmp.config.window.bordered(),
+--    documentation = cmp.config.window.bordered(),
   },
   mapping = cmp.mapping.preset.insert({
-    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-s>'] = cmp.mapping.complete(),
     ['<C-f>'] = cmp_action.luasnip_jump_forward(),
     ['<C-b>'] = cmp_action.luasnip_jump_backward(),
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
-  })
+    ['<C-y>'] = cmp.mapping.confirm({ select = true, })
+  }),
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = 'symbol_text',
+      menu = ({
+        path = '[Path]',
+        nvim_lsp = '[LSP]',
+        nvim_lua = '[Lua]',
+        buffer = '[Buf]',
+        luasnip = '[Snip]',
+      })
+    })
+  }
+
 })
 
 lsp.set_sign_icons( {
   error = '✘',
-  warn = '▲',
+  warn = '⚠',
   hint = '⚑',
-  info = ''
+  info = 'ℹ'
 })
 
 lsp.set_preferences({
@@ -79,6 +94,8 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
+
 
 vim.diagnostic.config({
     virtual_text = true
