@@ -92,8 +92,11 @@ vim.keymap.set('n', '<leadert>vh', builtin.help_tags, { desc = "Help Tags" })
 vim.keymap.set('n', '<leader>rr',
   function()
     cwd = vim.fn.getcwd()
+    vim.notify(cwd)
     fp = vim.fn.expand("%:h")
+    vim.notify(fp)
     p = fp:gsub("^" .. cwd, "")
+    vim.notify(p)
     builtin.find_files({ search_dirs = { p } })
   end,
   { desc = "Browse current file directory" })

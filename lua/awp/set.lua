@@ -46,3 +46,9 @@ vim.wo.foldminlines = 1
 
 vim.opt.background = "dark"
 
+-- Strip trailing spaces on save - finally shared with the world by TSV
+vim.api.nvim_create_autocmd({"BufWritePre"}, {
+  pattern = { "*" },
+  command = [[%s/\s\+$//e]],
+})
+
