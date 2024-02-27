@@ -29,6 +29,8 @@ do
 
 quit nvim
 
+Install codeium - https://codeium.com/vim_tutorial
+
 Enjoy
 
 ## Features
